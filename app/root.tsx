@@ -1,14 +1,18 @@
 import {
   Links,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
+  NavLink,
+  Outlet,
+  LiveReload
 } from "@remix-run/react";
+
 import type { LinksFunction } from "@remix-run/node";
+import { useLocation, useOutlet } from "@remix-run/react";
+
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useLocation, useOutlet } from "react-router-dom";
 
 import "./tailwind.css";
 
@@ -25,7 +29,11 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export default function App() {
+
+  const outlet = useOutlet();
+
+
   return (
     <html lang="en">
       <head>
@@ -35,29 +43,32 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <header>
+          <nav>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/lab">Lab</NavLink>
+          </nav>
+        </header>
+
+        <AnimatePresence initial={false}>
+          <motion.main
+            key={useLocation().pathname}
+            initial={{ x: "10%", opacity: 0 }}
+            animate={{ x: "0", opacity: 1 }}
+            exit={{ x: "0", opacity: 0 }}
+          >
+            {outlet}
+          </motion.main>
+        </AnimatePresence>
+
+
         <ScrollRestoration />
         <Scripts />
+        <LiveReload />
+
+
       </body>
     </html>
-  );
-}
-
-export default function App() {
-  const location = useLocation();
-  const outlet = useOutlet();
-
-  return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={location.pathname}
-        initial={{ opacity: 0, x: "10%" }}
-        animate={{ opacity: 1, x: "0%" }}
-        exit={{ opacity: 0, x: "-40%" }}
-        transition={{ duration: 0.3 }}
-      >
-        {outlet}
-      </motion.div>
-    </AnimatePresence>
   );
 }
