@@ -1,3 +1,3 @@
 export default function Index() {
-  return <h1>Index 2</h1>;
+  return <h1 className="border-2 border-red-500">Home</h1>;
 }

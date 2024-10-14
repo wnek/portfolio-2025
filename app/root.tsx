@@ -54,9 +54,9 @@ export default function App() {
         <AnimatePresence initial={false}>
           <motion.main
             key={useLocation().pathname}
-            initial={{ x: "10%", opacity: 0 }}
-            animate={{ x: "0", opacity: 1 }}
-            exit={{ x: "0", opacity: 0 }}
+            initial={{ y: 19, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+
           >
             {outlet}
           </motion.main>
