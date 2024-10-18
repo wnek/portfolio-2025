@@ -12,7 +12,7 @@ import type { LinksFunction } from "@remix-run/node";
 import { useLocation, useOutlet } from "@remix-run/react";
 
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, spring } from "framer-motion";
 
 import "./tailwind.css";
 
@@ -54,9 +54,14 @@ export default function App() {
         <AnimatePresence initial={false}>
           <motion.main
             key={useLocation().pathname}
-            initial={{ y: 19, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-
+            initial={{ y: 19, opacity: 0, filter: 'blur(5px)' }}
+            animate={{ y: 0, opacity: 1, filter: 'blur(0)' }}
+            transition={{
+              duration: 0.1,
+              type: 'spring',
+              stiffness: 300,
+              damping: 30,
+            }}
           >
             {outlet}
           </motion.main>
