@@ -43,12 +43,14 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <header>
-          <nav>
+        <header className="flex justify-between m-auto max-w-screen-md">
+          <p>Mariusz Wnęk</p>
+          <a href="https://twitter.com/mariuszwn">Let's talk</a>
+          {/* <nav>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/lab">Lab</NavLink>
-          </nav>
+          </nav> */}
         </header>
 
         <AnimatePresence initial={false}>
