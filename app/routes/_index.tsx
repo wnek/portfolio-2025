@@ -1,5 +1,8 @@
-import { motion, stagger, useAnimate } from "framer-motion";
+import { stagger, useAnimate } from "framer-motion";
 import { useEffect } from "react";
+
+import { Canvas } from "@react-three/fiber";
+import { CameraControls, SoftShadows } from "@react-three/drei";
 
 export default function Index() {
 
@@ -8,12 +11,24 @@ export default function Index() {
 
 
   useEffect(() => {
-    animate("li", { y: -20 }, { delay: stagger(0.1) })
+    animate("li", { y: -5, filter: "blur(10px)" }, { delay: stagger(0.1) })
   }, [])
 
   return (
     <>
       <div className="bg-white p-8">
+        <div className="w-full h-screen border-red-500 border-2">
+          <Canvas>
+            <CameraControls />
+            <SoftShadows />
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[10, 10, 10]} intensity={1} />
+            <mesh>
+              <boxGeometry />
+              <meshStandardMaterial />
+            </mesh>
+          </Canvas>
+        </div>
         <section className="m-auto max-w-screen-md flex flex-col gap-8">
           <h1 className="~text-[2rem]/[5rem]">Growth by design</h1>
 
