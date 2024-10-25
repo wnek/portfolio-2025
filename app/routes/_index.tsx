@@ -1,4 +1,4 @@
-import { stagger, useAnimate } from "framer-motion";
+import { stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
 
 import { Canvas } from "@react-three/fiber";
@@ -7,12 +7,15 @@ import { CameraControls, SoftShadows } from "@react-three/drei";
 export default function Index() {
 
   const [scope, animate] = useAnimate();
-
-
+  const inView = useInView(scope);
 
   useEffect(() => {
-    animate("li", { y: -5, filter: "blur(10px)" }, { delay: stagger(0.1) })
-  }, [])
+
+    if (inView) {
+      animate("li", { y: -5 }, { delay: stagger(0.1) })
+    }
+
+  }, [inView])
 
   return (
     <>
