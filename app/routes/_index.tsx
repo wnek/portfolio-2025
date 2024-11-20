@@ -19,7 +19,7 @@ export default function Index() {
 
   return (
     <>
-      <div className="bg-white p-8">
+      <div className="p-8">
         <div className="w-full h-screen border-red-500 border-2">
           <Canvas>
             <CameraControls />
@@ -46,20 +46,20 @@ export default function Index() {
           <p>Impactful design goes beyond just aesthetic appeal. It must directly contribute to business performance. My approach incorporates design, psychology, and technology, with a specific focus on driving product growth.</p>
 
           <ul ref={scope} className="flex flex-col gap-1">
-            <li className="flex gap-4 bg-stone-100 p-4 rounded-md">
+            <li className="flex gap-4 bg-white p-4 rounded-md">
               Focus on the most critical performance metrics.
             </li>
 
-            <li className="flex gap-4 bg-stone-100 p-4 rounded-md">
+            <li className="flex gap-4 bg-white p-4 rounded-md">
               Identify and prioritize customer needs and expectations.
             </li>
 
-            <li className="flex gap-4 bg-stone-100 p-4 rounded-md">
+            <li className="flex gap-4 bg-white p-4 rounded-md">
               Create user experiences that drive conversions and growth.
             </li>
           </ul>
         </section>
-      </div>
+      </div >
     </>
   );
 }
