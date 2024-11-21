@@ -4,7 +4,13 @@ import { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { CameraControls, SoftShadows } from "@react-three/drei";
 
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+
 export default function Index() {
+
+  const lenis = useLenis(({ scroll }) => {
+    // called every scroll
+  })
 
   const [scope, animate] = useAnimate();
   const inView = useInView(scope);
@@ -18,7 +24,7 @@ export default function Index() {
   }, [inView])
 
   return (
-    <>
+    <ReactLenis root>
       <div className="p-8">
         <div className="w-full h-screen border-red-500 border-2">
           <Canvas>
@@ -60,6 +66,6 @@ export default function Index() {
           </ul>
         </section>
       </div >
-    </>
+    </ReactLenis>
   );
 }
