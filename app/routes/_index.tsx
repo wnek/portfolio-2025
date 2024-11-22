@@ -1,4 +1,5 @@
 import { stagger, useAnimate, useInView } from "framer-motion";
+import { motion } from "framer-motion-3d"
 import { useEffect } from "react";
 
 import { Canvas } from "@react-three/fiber";
@@ -32,10 +33,10 @@ export default function Index() {
             <SoftShadows />
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} intensity={1} />
-            <mesh>
+            <motion.mesh>
               <boxGeometry />
               <meshStandardMaterial />
-            </mesh>
+            </motion.mesh>
           </Canvas>
         </div>
         <section className="m-auto max-w-screen-md flex flex-col gap-8">
