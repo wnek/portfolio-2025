@@ -65,6 +65,7 @@ export default function Index() {
               Create user experiences that drive conversions and growth.
             </li>
           </ul>
+          <h1>Selected Works</h1>
         </section>
       </div >
     </ReactLenis>
