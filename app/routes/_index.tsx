@@ -14,7 +14,7 @@ export default function Index() {
       <div className="p-8">
 
         <section className="m-auto max-w-screen-md flex flex-col gap-8">
-          <h1 className="~text-[2rem]/[5rem]">Growth by design</h1>
+          <h1 className="text-5xl">Growth by design</h1>
 
         </section>
 
