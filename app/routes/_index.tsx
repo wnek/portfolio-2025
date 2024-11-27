@@ -21,10 +21,6 @@ export default function Index() {
         <section className="m-auto max-w-screen-md flex flex-col gap-8">
 
 
-          <p>Every new concept appears promising. It's easy to simply follow in the footsteps of competitors, trust your instincts, or optimistically hope for the best. However, our judgment is often clouded by subtle biases, leading to less than rational decision-making.
-          </p>
-
-          <p>Impactful design goes beyond just aesthetic appeal. It must directly contribute to business performance. My approach incorporates design, psychology, and technology, with a specific focus on driving product growth.</p>
 
           <ul className="flex flex-col gap-1">
             <li className="flex gap-4 bg-white p-4 rounded-md">
