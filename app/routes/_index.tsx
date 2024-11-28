@@ -22,19 +22,6 @@ export default function Index() {
 
 
 
-          <ul className="flex flex-col gap-1">
-            <li className="flex gap-4 bg-white p-4 rounded-md">
-              Focus on the most critical performance metrics.
-            </li>
-
-            <li className="flex gap-4 bg-white p-4 rounded-md">
-              Identify and prioritize customer needs and expectations.
-            </li>
-
-            <li className="flex gap-4 bg-white p-4 rounded-md">
-              Create user experiences that drive conversions and growth.
-            </li>
-          </ul>
           <h1>Selected Works</h1>
         </section>
       </div >
