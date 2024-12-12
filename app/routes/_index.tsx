@@ -24,6 +24,9 @@ export default function Index() {
 
           <h1>Selected Works</h1>
         </section>
+        <footer>
+          <p>© 2024 Growth by Design</p>
+        </footer>
       </div >
     </ReactLenis>
   );
