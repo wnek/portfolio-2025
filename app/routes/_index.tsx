@@ -23,7 +23,12 @@ export default function Index() {
 
 
           <h1>Selected Works</h1>
+          <h2>Together</h2>
+          <h2>Tagger</h2>
+          <h2>Antigro</h2>
+          <h2>Theatre.js</h2>
         </section>
+
         <footer>
           <p>© 2024 Growth by Design</p>
         </footer>
